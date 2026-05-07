@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.local
+.env.production
+logs/
+*.log
+.DS_Store
+coverage/
+dist/
+
+# Runtime artifacts — uploads come in via the API at runtime, never commit them
+public/uploads/

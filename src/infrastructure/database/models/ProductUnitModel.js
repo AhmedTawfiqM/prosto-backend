@@ -1,0 +1,17 @@
+'use strict';
+
+const { DataTypes } = require('sequelize');
+const sequelize = require('../sequelize');
+
+const ProductUnitModel = sequelize.define('ProductUnit', {
+  id: { type: DataTypes.BIGINT.UNSIGNED, autoIncrement: true, primaryKey: true },
+  external_id: { type: DataTypes.INTEGER, allowNull: true, unique: true },
+  name_en: { type: DataTypes.STRING(120), allowNull: false },
+  name_ar: { type: DataTypes.STRING(120), allowNull: false },
+}, {
+  tableName: 'product_units',
+  timestamps: true,
+  indexes: [{ fields: ['external_id'], unique: true }],
+});
+
+module.exports = ProductUnitModel;
